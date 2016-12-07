@@ -2,7 +2,6 @@ package scholarshipTest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -23,7 +22,7 @@ public class SmokeTest {
 
 	@BeforeTest
 	public void setup(){
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\QA\\Desktop\\UI\\scholarship\\src\\main\\resources\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\QA\\Desktop\\UI\\scholarship\\src\\main\\resources\\geckodriver.exe"); // for selenium 3.0
 		driver =new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://qa.admin.grade5.lk/");
@@ -43,10 +42,12 @@ public class SmokeTest {
 			//login to application
 			objLogin.adminLogin("lasantha2@gmail.com", "123456");
 
-
 			//Verify landing on paper set page
 			AssertHelper.verifyAdminPaperSetPage(objPaperSet.btn_createPaperSet,this.driver);
-			objPaperSet.createNewPaperSet();
+			Integer randomNum = objPaperSet.createNewPaperSet();
+			//Verify the created paper set
+			objPaperSet.checkPresenceOfCreatedPaperSet(randomNum.toString());
+
 
 
 		}catch (InterruptedException e) {

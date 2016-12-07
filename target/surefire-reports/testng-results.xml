@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="scholarshipTest.SmokeTest" duration-ms="14229" started-at="2016-12-05T07:22:25Z" finished-at="2016-12-05T07:22:39Z">
+  <suite name="scholarshipTest.SmokeTest" duration-ms="22527" started-at="2016-12-07T05:01:38Z" finished-at="2016-12-07T05:02:00Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="14229" started-at="2016-12-05T07:22:25Z" finished-at="2016-12-05T07:22:39Z">
+    <test name="Command line test" duration-ms="22527" started-at="2016-12-07T05:01:38Z" finished-at="2016-12-07T05:02:00Z">
       <class name="scholarshipTest.SmokeTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:scholarshipTest.SmokeTest@5f2050f6]" name="setup" is-config="true" duration-ms="9533" started-at="2016-12-05T12:52:25Z" finished-at="2016-12-05T12:52:34Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:scholarshipTest.SmokeTest@5f2050f6]" name="setup" is-config="true" duration-ms="11133" started-at="2016-12-07T10:31:38Z" finished-at="2016-12-07T10:31:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test_Home_Page_Appear_Correct()[pri:0, instance:scholarshipTest.SmokeTest@5f2050f6]" name="test_Home_Page_Appear_Correct" duration-ms="3242" started-at="2016-12-05T12:52:34Z" finished-at="2016-12-05T12:52:38Z">
+        <test-method status="PASS" signature="test_Home_Page_Appear_Correct()[pri:0, instance:scholarshipTest.SmokeTest@5f2050f6]" name="test_Home_Page_Appear_Correct" duration-ms="9858" started-at="2016-12-07T10:31:49Z" finished-at="2016-12-07T10:31:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Home_Page_Appear_Correct -->
-        <test-method status="PASS" signature="closeDriver()[pri:0, instance:scholarshipTest.SmokeTest@5f2050f6]" name="closeDriver" is-config="true" duration-ms="1417" started-at="2016-12-05T12:52:38Z" finished-at="2016-12-05T12:52:39Z">
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:scholarshipTest.SmokeTest@5f2050f6]" name="closeDriver" is-config="true" duration-ms="1525" started-at="2016-12-07T10:31:59Z" finished-at="2016-12-07T10:32:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
