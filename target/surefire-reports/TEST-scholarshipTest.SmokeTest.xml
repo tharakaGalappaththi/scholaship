@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="scholarshipTest.SmokeTest" time="9.859" errors="0" skipped="0">
+<testsuite tests="1" failures="1" name="scholarshipTest.SmokeTest" time="8.758" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
@@ -41,10 +41,11 @@
     <property name="file.encoding" value="Cp1252"/>
     <property name="user.name" value="QA"/>
     <property name="java.class.path" value="C:\tools\apache-maven-3.3.9\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="debug"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install -X"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -63,5 +64,22 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="scholarshipTest.SmokeTest" name="test_Home_Page_Appear_Correct" time="9.859"/>
+  <testcase classname="scholarshipTest.SmokeTest" name="test_Home_Page_Appear_Correct" time="8.758">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at scholarshipTest.SmokeTest.test_Home_Page_Appear_Correct(SmokeTest.java:47)
+</failure>
+    <system-out>Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@606d8acf
+Page is loaded
+</system-out>
+    <system-err>1481101738248	geckodriver	INFO	Listening on 127.0.0.1:5645
+Dec 07, 2016 2:38:58 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel&apos;s Law holds true on the remote end
+1481101738849	mozprofile::profile	INFO	Using profile path C:\Users\QA\AppData\Local\Temp\rust_mozprofile.1NwommWzxR8m
+1481101738849	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1481101738864	geckodriver::marionette	INFO	Connecting to Marionette on localhost:61181
+1481101740096	Marionette	INFO	Listening on port 61181
+Dec 07, 2016 2:39:02 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+</system-err>
+  </testcase>
 </testsuite>

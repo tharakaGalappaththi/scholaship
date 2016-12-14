@@ -9,20 +9,18 @@ import java.util.Random;
 public class AdminPaperSetPage {
     WebDriver driver;
     Random rand = new Random(); //for generate random numbers
-    public AdminPaperSetPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    public AdminPaperSetPage(WebDriver driver) {this.driver = driver;}
 
     //=====================================Web elements=================================================================
     public By btn_createPaperSet = By.xpath("//*[contains(text(),\"Create Paper\")]");
-        By tf_paperSetTitle = By.xpath("//*[@id=\"newSetModal\"]/div/div/form/div[1]/div[2]/input");
-        By tf_paperSetSummary = By.xpath("//*[@id=\"newSetModal\"]/div/div/form/div[1]/div[3]/textarea");
-        By btn_paperSetSubmit = By.xpath("//*[@id=\"newSetModal\"]/div/div/form/div[2]/button");
+        By tf_paperSetTitle = By.xpath("//input[@name='title']");
+        By tf_paperSetSummary = By.xpath("//textarea[@name='summary']");
+        By btn_createdPaperSetSubmit = By.xpath("//textarea[@name='summary']/parent::div/parent::div/parent::form/div[3]/button[2]");
         By lbl_createdPapersetLast = By.xpath("//*[contains(text(),'Previous')]/parent::li/parent::ul/li[last()-1]//span");
 
     //=====================================Parametrized Web elements====================================================
     public By paramLblNewlyCreatedPaperSet(String paperSetName){
-        By lbl_newlyCreatedPaperSet = By.xpath("//*[contains(text(),'"+paperSetName+"')]");
+        By lbl_newlyCreatedPaperSet = By.xpath("//h4[contains(text(),'"+paperSetName+"')]");
         return lbl_newlyCreatedPaperSet;
     }
 
@@ -41,11 +39,15 @@ public class AdminPaperSetPage {
 
     public void clickBtnSubmitPaperSet(){
 
-        driver.findElement(btn_paperSetSubmit).click();
+        driver.findElement(btn_createdPaperSetSubmit).click();
     }
 
     public void clickLblPaperSetLast(){
         driver.findElement(lbl_createdPapersetLast).click();
+    }
+
+    public void clickLblCreatedPaperSet(String createdPaperSetName){
+        driver.findElement(paramLblNewlyCreatedPaperSet(createdPaperSetName)).click();
     }
 
     //=====================================Re-Usable components=========================================================
@@ -54,17 +56,16 @@ public class AdminPaperSetPage {
 
         Thread.sleep(1000);
         clickBtnCreatePaperSet();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         typePaperSetTitle("Automated_PaperSet_"+randomNum);
         typePaperSetSummary("Automated_Summary_"+randomNum);
         Thread.sleep(1000);
         clickBtnSubmitPaperSet();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         return randomNum;
     }
 
     public void checkPresenceOfCreatedPaperSet(String paperSetNameVerify) throws InterruptedException {
-        clickLblPaperSetLast(); //click on the last paper set label
         Thread.sleep(1000);
         driver.findElement(paramLblNewlyCreatedPaperSet(paperSetNameVerify)).isDisplayed(); //Verify the newly created paper set
     }

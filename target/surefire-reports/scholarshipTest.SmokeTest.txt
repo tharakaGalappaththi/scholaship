@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: scholarshipTest.SmokeTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.844 sec
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 18.728 sec <<< FAILURE!
+test_Home_Page_Appear_Correct(scholarshipTest.SmokeTest)  Time elapsed: 8.758 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at scholarshipTest.SmokeTest.test_Home_Page_Appear_Correct(SmokeTest.java:47)
+
