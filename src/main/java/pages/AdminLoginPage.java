@@ -7,14 +7,14 @@ import org.openqa.selenium.WebDriver;
 public class AdminLoginPage {
 
     WebDriver driver;
-    By tf_adminUserName = By.xpath("//input[@name='username']");
-    By tf_adminPassWord = By.xpath("//input[@name='password']");
-    By btn_adminLoginSubmit = By.xpath("//button[@type='submit']");
-
-
     public AdminLoginPage(WebDriver driver){
         this.driver = driver;
     }
+
+    By tf_adminUserName = By.xpath("//h3[text()='Login']/../../div[2]//input");
+    By tf_adminPassWord = By.xpath("//h3[text()='Login']/../../div[2]/form/div[2]/input");
+    By btn_adminLoginSubmit = By.xpath("//h3[text()='Login']/../../div[2]//button");
+
 
     public String getLoginTitle(){
         return    driver.getTitle();
@@ -31,6 +31,9 @@ public class AdminLoginPage {
     public void clickSubmit(){
         driver.findElement(btn_adminLoginSubmit).click();
     }
+
+
+
 
     public void adminLogin(String adminUserName, String adminPassword) throws InterruptedException {
         //Fill user name

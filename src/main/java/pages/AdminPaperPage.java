@@ -38,10 +38,10 @@ public class AdminPaperPage {
         driver.findElement(tf_paperSummary).sendKeys(paperSummary);
     }
 
-    public void clickBtnSubmitPaper(){
+    public void clickBtnSubmitPaper(){driver.findElement(btn_createdPaperSubmit).click();}
 
-        driver.findElement(btn_createdPaperSubmit).click();
-    }
+    public void clickLblCreatedPaper(String createdPaperName){driver.findElement(paramLblNewlyCreatedPaper(createdPaperName)).click();}
+
     //=====================================Re-Usable components=========================================================
     public int createNewPaper() throws InterruptedException {
         int randomNum = rand.nextInt(1000);

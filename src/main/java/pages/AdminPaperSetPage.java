@@ -29,26 +29,17 @@ public class AdminPaperSetPage {
         driver.findElement(btn_createPaperSet).click();
     }
 
-    public void typePaperSetTitle(String paperSetTitle){
-        driver.findElement(tf_paperSetTitle).sendKeys(paperSetTitle);
-    }
+    public void typePaperSetTitle(String paperSetTitle){driver.findElement(tf_paperSetTitle).sendKeys(paperSetTitle);}
 
-    public void typePaperSetSummary(String paperSetSummary){
-        driver.findElement(tf_paperSetSummary).sendKeys(paperSetSummary);
-    }
+    public void typePaperSetSummary(String paperSetSummary){driver.findElement(tf_paperSetSummary).sendKeys(paperSetSummary);}
 
-    public void clickBtnSubmitPaperSet(){
-
-        driver.findElement(btn_createdPaperSetSubmit).click();
-    }
+    public void clickBtnSubmitPaperSet(){driver.findElement(btn_createdPaperSetSubmit).click();}
 
     public void clickLblPaperSetLast(){
         driver.findElement(lbl_createdPapersetLast).click();
     }
 
-    public void clickLblCreatedPaperSet(String createdPaperSetName){
-        driver.findElement(paramLblNewlyCreatedPaperSet(createdPaperSetName)).click();
-    }
+    public void clickLblCreatedPaperSet(String createdPaperSetName){driver.findElement(paramLblNewlyCreatedPaperSet(createdPaperSetName)).click();}
 
     //=====================================Re-Usable components=========================================================
     public int createNewPaperSet() throws InterruptedException {

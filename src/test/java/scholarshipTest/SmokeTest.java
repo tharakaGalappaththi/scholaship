@@ -7,10 +7,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.AdminLoginPage;
 import pages.AdminPaperPage;
+import pages.AdminPaperPartPage;
 import pages.AdminPaperSetPage;
 import testHelper.AssertHelper;
-
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,6 +20,7 @@ public class SmokeTest {
 	AdminLoginPage objLogin;
 	AdminPaperSetPage objPaperSet;
 	AdminPaperPage objPaper;
+	AdminPaperPartPage objPaperPart;
 
 
 	@BeforeTest
@@ -37,20 +37,26 @@ public class SmokeTest {
 			objLogin = new AdminLoginPage(driver); //Create objects of Pages
 			objPaper = new AdminPaperPage(driver);
 			objPaperSet = new AdminPaperSetPage(driver);
+			objPaperPart = new AdminPaperPartPage(driver);
+
 
 			String loginPageTitle = objLogin.getLoginTitle();
 			AssertHelper.verifyAdminPageTitle(loginPageTitle,"SchoolAdminApp"); //Verify login page title
-			objLogin.adminLogin("lasantha2@gmail.com", "123456"); //login to the application
+			objLogin.adminLogin("tharaka@gmail.com", "123456"); //login to the application
 
 
 			AssertHelper.verifyAdminPaperSetPage(objPaperSet.btn_createPaperSet,this.driver); //Verify landing on paper set page
 			Integer randomPaperSetNum = objPaperSet.createNewPaperSet(); // Create new paper set
 			objPaperSet.checkPresenceOfCreatedPaperSet(randomPaperSetNum.toString()); //Verify the created paper set
+
+
 			objPaperSet.clickLblCreatedPaperSet(randomPaperSetNum.toString()); // Clicked on newly created paper set
-
-
 			Integer randomPaperNum = objPaper.createNewPaper();
 			objPaper.checkPresenceOfCreatedPaper(randomPaperNum.toString());
+
+			objPaper.clickLblCreatedPaper(randomPaperNum.toString());
+			Integer randomPaperPartNum = objPaperPart.createNewPaperPart();
+			objPaperPart.checkPresenceOfCreatedPaperPart(randomPaperPartNum.toString());
 			Thread.sleep(3000);
 
 		}catch (InterruptedException e) {
@@ -62,5 +68,4 @@ public class SmokeTest {
 	public void closeDriver(){
 		driver.quit();
 	}
-
 	}
